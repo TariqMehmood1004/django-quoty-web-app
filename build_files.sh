@@ -6,7 +6,7 @@ echo "BUILD START"
 pip install -r requirements.txt
 
 # Collect static files
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 
  echo "BUILD END"
