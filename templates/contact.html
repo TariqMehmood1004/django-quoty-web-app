@@ -2,11 +2,11 @@
 
 {% load static %}
 
-{% block title %} Details - Quoty {% endblock %}
+{% block title %} Pay - Quoty {% endblock %}
 
 {% block content %}
 
-    <!-- Page wrapper -->
+  <!-- Page wrapper -->
     <div class="c3wgq cyndk chtv9 c5z2i">
 
         <!-- Site header -->
@@ -66,61 +66,56 @@
                             <h1 class="ca8f3 c25ay cn4ul c1p4p">The SyntaxilitY Corp.</h1>
                             <time class="before:content-['—_'] c0da4 clsju ceykk cgmti cntvh">12 October, 2024</time>
                         </div>
-            
+
                     </div>
                 </div>
             </div>
 
             <!-- Right side -->
-            <main class="c3wgq c3nel chtv9 cacuu c36e2 ca5uj">
+          <main class="cacuu c36e2 ca5uj chtv9 c3nel c3wgq">
                 <!-- Page content -->
-                <div class="cryui c3nel cve7d cjhcr cmboy csh0a c2knu con84 c9b8i">
-                    
-                    <!-- Back button -->
-                    <div class="c2g3a cp1ev c4ovs cuoln cp8ig">
-                        <a class="c95b3 c4oh8 cqrkk cw2jy ci0lp c8ug7 cdl7m cb8ym cgihz c60cz ciqx9 ckuce cs9if c40y7 cl2gl ci9vu c4k4g cnvgl" href="{% url 'index' %}">
-                            <svg width="12" height="10" xmlns="http://www.w3.org/2000/svg">
-                                <path class="chpsw" d="m5.94 10 1.05-.959-3.645-3.344H11.5V4.303H3.345L6.99.954 5.94 0 .5 5z"></path>
-                            </svg>
-                            <span class="chsm6">Back to Home</span>
-                        </a>
-                    </div>
+                <div class="con84 c9b8i cve7d c2knu cryui c3nel csh0a cjhcr cmboy">
 
                     <article>
-                        <h2 class="c79zg ckqb6 ca8f3">Competitive Analysis</h2>
-                        <div class="ca0rk ck3dd cxzkm">
-                            <p>
-                                The discovery phase is an essential part of my design process where I delve into every aspect of the product <strong class="c0rza cqls2 cy976">to gain a comprehensive understanding</strong>. It involves conducting extensive research and analysis to gather insights that lay the groundwork for the entire design journey.
-                            </p>
-                            <p>
-                                During this phase, I explore various elements such as the competition, market dynamics, and current challenges to inform my design decisions. Here's what the discovery phase typically includes:
-                            </p>
-                            <ul class="ca0rk">
-                                <li class="before:content-['✴︎'] c3wgq c8ug7 cro1j c4o70">These objectives are derived from user insights, align with the client's goals, and provide solutions to the identified challenges.</li>
-                                <li class="before:content-['✴︎'] c3wgq c8ug7 cro1j c4o70">These objectives are derived from user insights, align with the client's goals, and provide solutions to the identified challenges.</li>
-                            </ul>
-                            <p>
-                                First and foremost, I immerse myself in understanding my client's vision and project goals. By closely collaborating with the client, <strong class="c0rza cqls2 cy976">I ensure a clear understanding of their requirements and expectations for the product</strong>. This sets the foundation for the design process 👇
-                            </p>
-                            <figure class="cm1n2">
-                                <img class="c4cjc" src="{% static 'images/details-image-light.png' %}" width="628" height="253" alt="Post details light">
-                                <img class="cf0yw cxu3o" src="{% static 'images/details-image-dark.png' %}" width="628" height="253" alt="Post details dark">
-                                <figcaption class="cw8x3 c1y31 cggwu cgd5g">The three pillars of a successful competitive analysis phase.</figcaption>
-                            </figure>
-                            <p>
-                                By conducting a thorough discovery phase, I establish a solid foundation for the subsequent stages of the design process. <strong class="c0rza cqls2 cy976">This phase equips me with the necessary knowledge</strong> about the product's context, market landscape, user needs, and design objectives.
-                            </p>
-                            <p>
-                                With this understanding, I can move forward confidently into the ideation, concept development, and prototyping phases, knowing that my designs are rooted in a deep understanding of the product and its users.
-                            </p>
+                        <h2 class="ca8f3 ckqb6 c79zg">Contact Me</h2>
+                        <div class="cxzkm ck3dd ca0rk c8yff">
+                            <p>Shoot me a message if you have any questions or concerns regarding the quote I provided.</p>
                         </div>
+                        <form>
+                            <div class="ca0rk">
+                                <div>
+                                    <label class="c0rza cf7br cntvh ccj7u" for="email">Email</label>
+                                    <input id="email" class="cvn5f c3nel" type="email" placeholder="hey@themarkcorp.com" required="">
+                                </div>
+                                <div>
+                                    <label class="c0rza cf7br cntvh ccj7u" for="client">Client</label>
+                                    <input id="client" class="cvt2p cl5xa cfwqr c2e4s cdoj2 c8jqf cvn5f c3nel" type="text" placeholder="Client name" value="The Markyk Corp." required="" disabled="">
+                                </div>
+                                <div>
+                                    <label class="c0rza cf7br cntvh ccj7u" for="subject">Subject</label>
+                                    <select id="subject" class="cuo5j c3nel" required="">
+                                        <option>There is an error with the quote</option>
+                                        <option>I have a problem with payments</option>
+                                        <option>I want to modify the payment date</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="c0rza cf7br cntvh ccj7u" for="message">Messsage</label>
+                                    <textarea id="message" rows="4" class="cywrh c3nel" placeholder="Please provide a thorough and precise description, including any relevant details." required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="cfbmf">
+                                <button type="submit" class="cl7to cs9if cx2jt c25ay c3nel ckuce cy34g">Send</button>
+                            </div>
+                        </form>
                     </article>
+
                 </div>
             </main>
+
 
         </div>
 
     </div>
 
 {% endblock %}
-

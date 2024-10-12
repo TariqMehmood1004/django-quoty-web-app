@@ -1,0 +1,45 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script defer="" data-domain="preview.cruip.com,rollup.cruip.com" src="{% static 'js/script.js' %}"></script>
+
+
+    <script>
+        if (localStorage.getItem('dark-mode') === 'false' || !('dark-mode' in localStorage)) {
+            document.querySelector('html').classList.remove('dark');
+        } else {
+            document.querySelector('html').classList.add('dark');
+        }
+    </script>
+
+
+</head>
+<body class="cy976 co13m c0s9c csrkj cv4ci crsw4 ciqx9">
+
+    {% block content %}{% endblock %}
+
+    {% block scripts %}{% endblock %}
+
+    <script src="{% static 'js/alpinejs.min.js' %}" defer=""></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+        console.log("%cImportant!", "color: blue; font-size: x-large");
+        console.log("%cThe page you are viewing is for demo purposes only. CSS and HTML have been minified and class names have been shortened to improve the page load time. Download our templates from https://cruip.com/ 😉", "font-size: large");
+    </script>
+
+    <script>
+        const pagesList = [{"name":"Home","url":"https://preview.cruip.com/quoty/index.html","active":true},{"name":"Details","url":"https://preview.cruip.com/quoty/details.html","active":false},{"name":"Contact","url":"https://preview.cruip.com/quoty/contact.html","active":false},{"name":"Pay","url":"https://preview.cruip.com/quoty/pay.html","active":false}];if(window != top){window.parent.postMessage(pagesList, "https://cruip.com")};
+    </script>
+
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8d0f01c8fbf2668d","version":"2024.10.1","r":1,"token":"59cc17d45d734f9ba118c63036ab1b84","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}}}"="" crossorigin="anonymous"></script>
+</body>
+</html>

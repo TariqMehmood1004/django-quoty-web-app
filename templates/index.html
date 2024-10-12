@@ -1,19 +1,10 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <title>Quoty HTML Demo - Home</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-    <script>
-        if (localStorage.getItem('dark-mode') === 'false' || !('dark-mode' in localStorage)) {
-            document.querySelector('html').classList.remove('dark');
-        } else {
-            document.querySelector('html').classList.add('dark');
-        }
-    </script>    
-<script defer="" data-domain="preview.cruip.com,rollup.cruip.com" src="js/script.js"></script></head>
+{% extends "_layout.html" %}
 
-<body class="cy976 co13m c0s9c csrkj cv4ci crsw4 ciqx9">
+{% load static %}
 
+{% block title %} Quoty {% endblock %}
+
+{% block content %}
     <!-- Page wrapper -->
     <div class="c5z2i cyndk chtv9 c3wgq">
 
@@ -26,8 +17,8 @@
                     <div class="c1f4m c8e4r cy8j7">
                         <!-- Logo -->
                         <a class="c8ug7 ckz2n c3wgq" href="index.html" aria-label="Cruip">
-                            <img class="cb8ym" src="images/logo.jpg" width="32" height="32" alt="Mary Rutt">
-                            <span class="c1zc3 ceykk cgmti">Mary Rutt</span>
+                            <img class="cb8ym" src="{% static 'images/john.jpg' %}" style="border-radius: 50%; width: 70px; height: 70px; object-fit: cover" alt="Tariq Mehmood">
+                            <span class="c1zc3 ceykk cgmti">Tariq Mehmood</span>
                         </a>
                     </div>
         
@@ -63,18 +54,18 @@
 
                 <!-- Background Illustration -->
                 <div class="c3gpz c1osd cvvie cmatm cnh8i crp9m cfxzy" aria-hidden="true">
-                    <img class="c3stl" src="images/bg-illustration.svg" width="785" height="685" alt="Bg illustration">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="785" height="685"><defs><linearGradient id="a" x1="16.981%" x2="50%" y1="14.165%" y2="100%"><stop offset="0%" stop-color="#3B82F6" stop-opacity=".903"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/></linearGradient><linearGradient id="b" x1="19.609%" x2="50%" y1="14.544%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path fill="url(#a)" fill-opacity=".64" d="m351 258 461 369-284 58z" transform="matrix(-1 0 0 1 1136 0)"/><path fill="url(#b)" d="m0 0 461 369-284 58z" transform="matrix(-1 0 0 1 434 0)"/></g></svg>
                 </div>
 
                 <div class="clkia cw17b c54n8 cve7d chtv9 c2knu cryui c3nel cl0qm cdv0q c3wgq cmboy">
                     <div class="cdl7m chtv9 c3wgq cjhcr">
-            
+
                         <div class="cfnv8">
                             <div class="cj6wo ceykk ckwqs">Quote for</div>
-                            <h1 class="ca8f3 c25ay cn4ul c1p4p">The Markyk Corp.</h1>
-                            <time class="before:content-['—_'] c0da4 clsju ceykk cgmti cntvh">20 April, 2024</time>
+                            <h1 class="ca8f3 c25ay cn4ul c1p4p">The SyntaxilitY Corp.</h1>
+                            <time class="before:content-['—_'] c0da4 clsju ceykk cgmti cntvh">12 October, 2024</time>
                         </div>
-            
+
                     </div>
                 </div>
             </div>
@@ -88,7 +79,7 @@
                         <section class="clkj5">
                             <h2 class="cse8i coexk c9a7b">Brief</h2>
                             <div class="cxzkm ck3dd ca0rk">
-                                The client is looking to review and revamp the information architecture, user experience and user interface design of <strong class="cy976 cqls2 c0rza">The Markyk Corp.</strong>, a web application that connects landlords and tenants across Europe and America.
+                                The client is looking to review and revamp the information architecture, user experience and user interface design of <strong class="cy976 cqls2 c0rza">The SyntaxilitY Corp.</strong>, a web application that connects landlords and tenants across Europe, America, and Asia.
                             </div>
                         </section>
                         <section class="clkj5">
@@ -122,69 +113,69 @@
                                         <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="cwoqp c200e ci57k c82ek c1zux c7hd0 csyf2 ccmto cm02q cb9a1 c9a2m cejkp ci4c2 cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">
                                                         Competitive Analysis
                                                     </a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$7,800</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$7,800</a>
                                             </td>
                                         </tr>
-                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">                                         
+                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="c7hd0 csyf2 c9a2m cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">UX Research Reports</a>
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">UX Research Reports</a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$2,560</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$2,560</a>
                                             </td>
                                         </tr>
-                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">                                         
+                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="c7hd0 csyf2 c9a2m cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">Sitemap and Information Architecture</a>
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">Sitemap and Information Architecture</a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$1,420</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$1,420</a>
                                             </td>
                                         </tr>
-                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">                                         
+                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="c7hd0 csyf2 c9a2m cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">UX Wireframes and User Flows</a>
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">UX Wireframes and User Flows</a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$3,978</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$3,978</a>
                                             </td>
                                         </tr>
-                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">                                         
+                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="c7hd0 csyf2 c9a2m cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">Visual Design</a>
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">Visual Design</a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$4,476</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$4,476</a>
                                             </td>
                                         </tr>
-                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">                                         
+                                        <tr class="cd8hs c0ad6 c3ynp ceyck ckzi6 cbk2s">
                                             <th scope="row" class="c7hd0 csyf2 c9a2m cy3zg c95b3 cmboy cwapv">
                                                 <div class="cse8i c0269">
-                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="details.html">Interactive Prototypes + Assets Exports</a>
+                                                    <a class="cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}">Interactive Prototypes + Assets Exports</a>
                                                 </div>
                                                 <p class="cxzkm ck3dd">The client is looking to review the information.</p>
                                             </th>
                                             <td class="cs5fy cpeoy czdqr c6wt9 csg48 c510c ce1a7 cl43r ctazt cotlx cxhrl c7hd0 c05fa cc5np csyf2 cmj6x chq6w cu92t cur3d ccmto cvjx5 cpdog cse8i c4mgb cc604 c4xcz ctcb3 c95b3 cmboy cwapv">
-                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="details.html" tabindex="-1">$4,326</a>
+                                                <a class="cvxez cbzwq cv7r7 cf2k0 c7z6t cmv25" href="{% url 'details' %}" tabindex="-1">$4,326</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -309,8 +300,8 @@
                 <div class="co13m cc9s4 c5bmk ca5uj c7k6n ciqx9 c3nel c1bvx c01bk">
                     <div class="cve7d c2knu cryui c3nel cmboy">
                         <div class="ckz2n cfbl1 c3wgq cqtii">
-                            <a class="cnvgl cl2gl ci9vu cy976 c4k4g c60cz cs9if cqls2 ciqx9 c3nel ckuce cy34g" href="contact.html">Contact Me</a>
-                            <a class="c70y9 c0kcv cnzrq cl7to cs9if csepm cx2jt c25ay c3nel ckuce cy34g" href="pay.html">Pay - $24.560</a>
+                            <a class="cnvgl cl2gl ci9vu cy976 c4k4g c60cz cs9if cqls2 ciqx9 c3nel ckuce cy34g" href="{% url 'contact' %}">Contact Me</a>
+                            <a class="c70y9 c0kcv cnzrq cl7to cs9if csepm cx2jt c25ay c3nel ckuce cy34g" href="{% url 'pay' %}">Pay - $24.560</a>
                         </div>
                     </div>
                 </div>
@@ -320,11 +311,4 @@
 
     </div>
 
-
-    <script src="js/alpinejs.min.js" defer=""></script>
-    <script src="js/main.js"></script>
-
-
-
-<script>console.log("%cImportant!", "color: blue; font-size: x-large");console.log("%cThe page you are viewing is for demo purposes only. CSS and HTML have been minified and class names have been shortened to improve the page load time. Download our templates from https://cruip.com/ 😉", "font-size: large");</script><script>const pagesList = [{"name":"Home","url":"https://preview.cruip.com/quoty/index.html","active":true},{"name":"Details","url":"https://preview.cruip.com/quoty/details.html","active":false},{"name":"Contact","url":"https://preview.cruip.com/quoty/contact.html","active":false},{"name":"Pay","url":"https://preview.cruip.com/quoty/pay.html","active":false}];if(window != top){window.parent.postMessage(pagesList, "https://cruip.com")};</script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" data-cf-beacon="{" rayid":"8d0f01c8fbf2668d","version":"2024.10.1","r":1,"token":"59cc17d45d734f9ba118c63036ab1b84","servertiming":{"name":{"cfextpri":true,"cfl4":true,"cfspeedbrain":true,"cfcachestatus":true}}}"="" crossorigin="anonymous"></script>
-</body></html>
+{% endblock %}
