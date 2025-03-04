@@ -1,24 +1,26 @@
 import os
 from pathlib import Path
 
-from django.conf.global_settings import CSRF_TRUSTED_ORIGINS
-from environ import Env
+import dj_database_url
 
+from environ import Env
 env = Env()
 env.read_env()
 
-ENVIRONMENT = env('ENVIRONMENT', default='development')
+ENVIRONMENT = env('ENVIRONMENT', default="production")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure--m%*r9x&9y0k1#2^0cnpz+d)$_m83qfvbd2a&h&o#0n8_d8%q7'
 
+# Set to True for connecting to remote database from local environment
 POSTGRES_LOCALLY = False
 
-DEBUG = False
 if ENVIRONMENT == 'development':
     DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'web-2gnv14lqtaxr.up-de-fra1-k8s-1.apps.run-on-seenode.com/']
 
@@ -70,12 +72,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'QuotyProject.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY:
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL', default='sqlite:///db.sqlite3'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -114,3 +121,10 @@ MEDIA_URL = '/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_EMAIL_REQUIRED = True
