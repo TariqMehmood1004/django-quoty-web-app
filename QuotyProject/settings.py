@@ -1,23 +1,28 @@
 import os
 from pathlib import Path
 
-from django.conf import STATICFILES_STORAGE_ALIAS
+from django.conf.global_settings import CSRF_TRUSTED_ORIGINS
+from environ import Env
+
+env = Env()
+env.read_env()
+
+ENVIRONMENT = env('ENVIRONMENT', default='development')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure--m%*r9x&9y0k1#2^0cnpz+d)$_m83qfvbd2a&h&o#0n8_d8%q7'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+POSTGRES_LOCALLY = False
+
 DEBUG = False
+if ENVIRONMENT == 'development':
+    DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'web-2gnv14lqtaxr.up-de-fra1-k8s-1.apps.run-on-seenode.com/']
 
+CSRF_TRUSTED_ORIGINS = ['https://web-2gnv14lqtaxr.up-de-fra1-k8s-1.apps.run-on-seenode.com/']
 
 # Application definition
 
@@ -65,6 +70,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'QuotyProject.wsgi.application'
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -86,9 +98,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
