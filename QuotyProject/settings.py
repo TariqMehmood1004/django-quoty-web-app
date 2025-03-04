@@ -70,19 +70,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'QuotyProject.wsgi.application'
+# gunicorn QuotyProject.wsgi.application --bind 0.0.0.0:80
 
-
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY:
-    DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL', default='sqlite:///db.sqlite3'))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_ng4iz4rejqrr',
+        'USER': 'db_ng4iz4rejqrr',
+        'PASSWORD': 'YRP4a34xFIlKL77imLrPxNWB',
+        'HOST': 'up-de-fra1-postgresql-1.db.run-on-seenode.com',
+        'PORT': '11550',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
