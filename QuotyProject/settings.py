@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'QuotyProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('NAME'),
+        'NAME': env('DB_NAME'),
         'USER': env('USER'),
         'PASSWORD': env('PASSWORD'),
         'HOST': env('HOST'),
