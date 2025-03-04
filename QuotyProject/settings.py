@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'QuotyProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_ng4iz4rejqrr',
-        'USER': 'db_ng4iz4rejqrr',
-        'PASSWORD': 'YRP4a34xFIlKL77imLrPxNWB',
-        'HOST': 'up-de-fra1-postgresql-1.db.run-on-seenode.com',
-        'PORT': '11550',
+        'NAME': env('DB_NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
     }
 }
 
