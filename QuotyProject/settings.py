@@ -1,13 +1,12 @@
 import os
 from pathlib import Path
 
-import dj_database_url
-
 from environ import Env
 env = Env()
 env.read_env()
 
 ENVIRONMENT = env('ENVIRONMENT', default="production")
+print(f"ENVIRONMENT: {ENVIRONMENT}")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -72,10 +71,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'QuotyProject.wsgi.application'
 # gunicorn QuotyProject.wsgi.application --bind 0.0.0.0:80
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
+        'NAME': env('NAME'),
         'USER': env('USER'),
         'PASSWORD': env('PASSWORD'),
         'HOST': env('HOST'),
