@@ -21,9 +21,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'web-m0g23u4zewyc.up-de-fra1-k8s-1.apps.run-on-seenode.com/']
+ALLOWED_HOSTS = ['web-7mbj8m539src.up-de-fra1-k8s-1.apps.run-on-seenode.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://web-m0g23u4zewyc.up-de-fra1-k8s-1.apps.run-on-seenode.com/']
+CSRF_TRUSTED_ORIGINS = ['https://web-7mbj8m539src.up-de-fra1-k8s-1.apps.run-on-seenode.com']
 
 # Application definition
 
